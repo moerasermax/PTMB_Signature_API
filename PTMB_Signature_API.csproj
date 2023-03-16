@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDAD0217-C7E3-498E-97F9-3D4EF7BEBFD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PTMB_Signature_API</RootNamespace>
+    <AssemblyName>PTMB_Signature_API</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcctbookAPIs">
+      <HintPath>..\Code\Finance_Department_Tools_MonthlyBill\bin\AcctbookAPIs.dll</HintPath>
+    </Reference>
+    <Reference Include="API_SendMail">
+      <HintPath>bin\API_SendMail.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data_Set\Login\Date_Set_Login.cs" />
+    <Compile Include="Data_Set\Sign\Data_Set_Mission_Collect_Signed.cs" />
+    <Compile Include="Data_Set\DAO\Data_Set_DAO_Data.cs" />
+    <Compile Include="Data_Set\Employee\Data_Set_Employee.cs" />
+    <Compile Include="Data_Set\Common\Data_Set_Enum.cs" />
+    <Compile Include="Data_Set\Mission\Data_Set_Mission.cs" />
+    <Compile Include="Data_Set\Common\Data_Set_Result.cs" />
+    <Compile Include="Data_Set\Sign\Data_Set_Sign.cs" />
+    <Compile Include="Data_Set\Sign\Data_Set_Sign_History.cs" />
+    <Compile Include="Development_Demo_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Development_Demo_Form.Designer.cs">
+      <DependentUpon>Development_Demo_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informatio_Set\Information_Set_Employee.cs" />
+    <Compile Include="Interface\IMail.cs" />
+    <Compile Include="Interface\I_Login.cs" />
+    <Compile Include="Interface\I_Controller_Signer.cs" />
+    <Compile Include="Interface\I_Mission_Action.cs" />
+    <Compile Include="Interface\I_Mission_Type.cs" />
+    <Compile Include="Interface\I_Signature.cs" />
+    <Compile Include="Interface\I_Signature_Employee.cs" />
+    <Compile Include="Interface\I_Mission.cs" />
+    <Compile Include="Interface\I_Mission_Object.cs" />
+    <Compile Include="Interface\I_Signature_Sign.cs" />
+    <Compile Include="Interface\I_SQL.cs" />
+    <Compile Include="Interface\I_SQL_Common.cs" />
+    <Compile Include="Interface\I_SQL_Logic.cs" />
+    <Compile Include="Model\Abstract\Abstract_PlgunFunction.cs" />
+    <Compile Include="Model\Implement\DAO\DAO_Post_Process.cs" />
+    <Compile Include="Model\Implement\DAO\DAO_SQL.cs" />
+    <Compile Include="Model\Implement\Controller_Sign.cs" />
+    <Compile Include="Model\Abstract\Mission.cs" />
+    <Compile Include="Model\Abstract\Signature.cs" />
+    <Compile Include="Model\Implement\DAO\DAO_Token.cs" />
+    <Compile Include="Model\Implement\Controller_Sign_Test_Abstract.cs" />
+    <Compile Include="Model\Implement\LOANIT.cs" />
+    <Compile Include="Model\Implement\SQL.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Development_Demo_Form.resx">
+      <DependentUpon>Development_Demo_Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Demo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
